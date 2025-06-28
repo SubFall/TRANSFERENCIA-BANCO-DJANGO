@@ -1,0 +1,37 @@
+# Ignora arquivos de banco de dados
+*.sqlite3
+*.fdb
+*.gdb
+
+# Ignora a pasta onde o Django armazena os arquivos de upload
+# MEDIA_ROOT, conforme configurado em settings.py
+/media/
+
+# Ignora a pasta de arquivos estáticos coletados para produção
+# STATIC_ROOT, conforme configurado em settings.py
+/staticfiles/
+
+# Ignora arquivos de ambiente virtual (Python)
+.venv/
+env/
+venv/
+*venv*/
+
+# Ignora arquivos de cache do Python
+__pycache__/
+*.pyc
+
+# Ignora arquivos de IDEs populares
+.idea/
+.vscode/
+*.swp
+*.sublime-project
+*.sublime-workspace
+
+# Ignora arquivos de log
+*.log
+
+# Ignora arquivos de ambiente local (senhas, chaves, etc.)
+.env
+.DS_Store # Mac OS
+Thumbs.db # Windows

@@ -1,0 +1,106 @@
+        /* Define as variáveis de cores para fácil manutenção */
+        :root {
+            --cor-fundo-principal: #1f2029;
+            --cor-card-fundo: #2a2c37;
+            --cor-texto-principal: #e0e0e0;
+            --cor-texto-secundario: #a0a0a0;
+            --cor-botao-fundo: #6a6af3;
+            --cor-botao-hover: #5d5dcf;
+            --cor-sucesso: #76e848;
+            --cor-borda: #444;
+            --cor-sombra: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Estilo para o corpo da página */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--cor-fundo-principal);
+            color: var(--cor-texto-principal);
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center;   /* Centraliza verticalmente */
+            min-height: 100vh;     /* Garante que o corpo ocupe a altura total da viewport */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Estilo para o contêiner principal (o "card") */
+        .container {
+            background-color: var(--cor-card-fundo);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px var(--cor-sombra);
+            text-align: center; /* Centraliza o texto e os elementos internos */
+            max-width: 600px;
+            width: 100%;
+            border: 1px solid var(--cor-borda);
+        }
+
+        h1, h2 {
+            color: var(--cor-texto-principal);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        /* Estilo para o formulário */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Espaço entre os elementos do formulário */
+            align-items: center; /* Centraliza os itens do formulário */
+        }
+
+        /* Estilo para o parágrafo de mensagem */
+        .success-message {
+            color: var(--cor-sucesso);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para os campos de arquivo */
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Alinha o label à esquerda */
+            width: 100%;
+            max-width: 400px; /* Limita a largura dos campos */
+            text-align: left;
+            gap: 8px;
+        }
+
+        .form-field label {
+            font-weight: bold;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 5px;
+        }
+
+        /* Estilo para o botão e o link de download */
+        .button {
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--cor-texto-principal);
+            background-color: var(--cor-botao-fundo);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none; /* Remove a sublinhado do link */
+            display: inline-block; /* Faz o link se comportar como um bloco para poder aplicar padding */
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: var(--cor-botao-hover);
+            transform: translateY(-2px); /* Efeito de "levitação" ao passar o mouse */
+        }
+
+        /* Estilo para o botão de download */
+        .download-section {
+            margin-top: 40px;
+        }
+        
+        .download-button-wrapper {
+            margin-top: 20px;
+        }

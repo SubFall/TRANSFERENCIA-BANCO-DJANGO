@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Processar e Baixar Bancos Firebird</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload, Processamento e Download de Bancos Firebird</h1>
+
+        {% if mensagem %}
+            <p class="success-message">{{ mensagem }}</p>
+        {% endif %}
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <div class="form-field">
+                <label for="{{ form.source_bank.id_for_label }}">Banco de Dados de Origem:</label>
+                {{ form.source_bank }}
+            </div>
+
+            <div class="form-field">
+                <label for="{{ form.destination_bank.id_for_label }}">Banco de Dados de Destino (para ser atualizado):</label>
+                {{ form.destination_bank }}
+            </div>
+            
+            <button type="submit" class="button">Enviar e Processar</button>
+        </form>
+
+        {% if processamento_id %}
+            <div class="download-section">
+                <h2>Download do Banco Atualizado</h2>
+                <p>Seu banco de dados de destino foi atualizado. Você pode baixá-lo aqui:</p>
+                <div class="download-button-wrapper">
+                    <a href="{% url 'download_db' processamento_id=processamento_id %}" class="button">Baixar Banco de Destino Atualizado</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
