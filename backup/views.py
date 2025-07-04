@@ -137,7 +137,42 @@ def upload_process_download(request):
             print(f"Copiado destino original para trabalhar em: {temp_destination_path}")
 
             # Define as tabelas que você quer migrar
-            tabelas_para_migrar = ['PESSOAS',] # Personalize esta lista!
+            tabelas_para_migrar = [
+        'PESSOAS', 
+        'PRODUTOS', 
+        'PRODUTO_CODIGOS', 
+        'FAMILIAS_PRODUTOS', 
+        'GRUPOS_PRODUTOS',
+        'SUB_GRUPOS_PRODUTOS', 
+        'PRODUTO_LINKADO', 
+        'USUARIOS', 
+        #'USUARIOS_EMPRESAS', 
+        'PROMOCAO',
+        'PROMOCAO_VINCULOS', 
+        'PROMOCAO_BASECALCULO', 
+        'PROMOCAO_EMPRESA', 
+        'PROMOCAO_PAGAMENTO',
+        'PROMOCAO_TABELAPRECO', 
+        'GRUPOS', 
+        'FORMAS_PAGAMENTO', 
+        'FORMAS_PAGAMENTO_OPE',
+        'REGRAS_CASHBACK_DETALHES', 
+        'PAGAMENTO_POSTERIOR', 
+        'CONDICOES_PAGAMENTO',
+        'CP_DETALHE', 
+        'CP_DETALHE_PAGAMENTO', 
+        'CP_DETALHE_PARC', 
+        'CAIXA_GERAL', 
+        'EMPRESAS',
+        'ENDERECOS', 'CIDADES', 'ESTADOS', 
+        'CARGOS', 
+        'PLANO_CONTAS', 
+        'PORTADORES', 
+        #'TRIBUTACAO_FEDERAL',
+        #TRIBUTACAO_ESTADUAL', 
+        #'TABELA_NCM', 
+        #'NCM',
+    ] # Personalize esta lista!
 
             # Chama a função de processamento
             processamento_sucesso = process_uploaded_firebird_dbs(
@@ -174,6 +209,7 @@ def download_processed_db(request, processamento_id):
     """
     try:
         processamento_instance = DatabaseProcessing.objects.get(pk=processamento_id, processed=True)
+        print(f' opa ---- {processamento_instance.pk}')
     except BackpForm.DoesNotExist:
         raise Http404("Processamento não encontrado ou não finalizado.")
 

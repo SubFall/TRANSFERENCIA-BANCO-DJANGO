@@ -21,7 +21,6 @@ class BackpForm(forms.ModelForm):
             # Verifica se a extensão é '.fdb'
             if not filename.lower().endswith('.fdb'):
                 raise forms.ValidationError('O arquivo de origem deve ser do tipo .FDB.')
-            print(f'estou aqui ---------- {self}')
         return uploaded_file
 
     def clean_destination_bank(self):
