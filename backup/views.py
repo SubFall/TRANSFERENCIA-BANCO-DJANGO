@@ -209,7 +209,6 @@ def download_processed_db(request, processamento_id):
     """
     try:
         processamento_instance = DatabaseProcessing.objects.get(pk=processamento_id, processed=True)
-        print(f' opa ---- {processamento_instance.pk}')
     except BackpForm.DoesNotExist:
         raise Http404("Processamento não encontrado ou não finalizado.")
 
